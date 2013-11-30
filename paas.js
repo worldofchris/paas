@@ -2,19 +2,34 @@
 var http = require('http');
 
 var punster = require('./src/punster.js');
+var view = require('./src/view.js');
 
 // Configure our HTTP server to respond with Hello World to all requests.
 var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
   
-  subject = request.url.split("/")[1];
+  var subject = request.url.split("/")[1];
+  var format;
+  var view_foo;
+
+  if (request.url.split("/").slice(-1)[0] == 'json') {
+    format = 'json';
+  }
+
   try {
     pun = punster.pun(subject);
-    response.end(pun);
+    view_foo = (view.pun(pun, subject, format));
     console.log(pun);
   } catch(err) {
-    response.end(err)
+    view_foo = (view.signup(subject, format));
     console.log(err);
+  }
+
+  if (format == 'json') {
+    response.writeHead(200, {"Content-Type": "application/json"});
+    response.end(JSON.stringify(view_foo));
+  } else {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.end(view_foo);
   }
 });
 

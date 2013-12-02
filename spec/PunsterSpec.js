@@ -30,4 +30,11 @@ describe("punster", function() {
 
   });
 
+  it("should berate me for using cus words", function() {
+
+    var subject = "arse";
+    expect( function(){ punster.pun(subject); }).toThrow(new Error("dirty boy"));
+
+  });
+
 });

@@ -42,8 +42,6 @@ describe("view", function () {
     // expect a form to appear pre populated with the subject of the pun I asked for
     var pun_view = view.pun(pun, subject, 'json');
 
-    var $ = this.cheerio.load(pun_view);
-
     expect(pun_view.pun).toEqual(pun);
     expect(pun_view.subject).toEqual(subject);
 
@@ -52,15 +50,30 @@ describe("view", function () {
   it("should be able to return the no pun error as JSON", function() {
 
     var subject = 'eggs';
-    // substack
 
     // expect a form to appear pre populated with the subject of the pun I asked for
     var pun_view = view.signup(subject, 'json');
 
-    var $ = this.cheerio.load(pun_view);
-
     expect(pun_view.status).toEqual(404);
     expect(pun_view.subject).toEqual(subject);
+
+  });
+
+  it("should admonish me for being a dirty boy", function() {
+
+    var alt_pun = "art";
+
+    var dirty_boy_view = view.dirty_boy(alt_pun);
+    var $ = this.cheerio.load(dirty_boy_view);
+
+    expect($("#redirect").attr("href")).toEqual("/pun/" + alt_pun);
+
+  });
+
+  it("should admonish me for being a dirty boy JSON style", function() {
+
+    var dirty_boy_view = view.dirty_boy(undefined, 'json');
+    expect(dirty_boy_view.status).toEqual(406);
 
   });
 

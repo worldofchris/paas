@@ -20,7 +20,14 @@ var server = http.createServer(function (request, response) {
     view_foo = (view.pun(pun, subject, format));
     console.log(pun);
   } catch(err) {
-    view_foo = (view.signup(subject, format));
+    switch (err) {
+      case 'do not has':
+        view_foo = (view.signup(subject, format));
+        break;
+      case 'dirty boy':
+        view_foo = (view.dirty_boy(subject, format));
+        break;
+      }
     console.log(err);
   }
 

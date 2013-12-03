@@ -10,7 +10,8 @@
 
         var puns = [{subject: "cock", pun: "The gun accidentally went off, now he's half cocked"},
                     {subject: "eggs", pun: "That's eggcellent"},
-                    {subject: "art",  pun: "Mona Lisa walks up to Leonardo Da Vinci and says 'You got a match?' Yeah, your face and my art."}];
+                    {subject: "art",  pun: "Mona Lisa walks up to Leonardo Da Vinci and says 'You got a match?' Yeah, your face and my art."},
+                    {subject: "plumbing", pun: "Fixing the toilet in the basement made me feel like I was plumbing new depths."}];
 
         for (var i = 0; i < puns.length; i++) {
             if (puns[i].subject == subject) {

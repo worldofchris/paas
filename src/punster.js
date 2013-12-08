@@ -12,7 +12,8 @@
                     {subject: "eggs", pun: "That's eggcellent"},
                     {subject: "art",  pun: "Mona Lisa walks up to Leonardo Da Vinci and says 'You got a match?' Yeah, your face and my art."},
                     {subject: "plumbing", pun: "Fixing the toilet in the basement made me feel like I was plumbing new depths."},
-                    {subject: "spam", pun: "The online supermarket keep sending me special offers on luncheon meat. I wish they'd stop spamming me."}];
+                    {subject: "spam", pun: "The online supermarket keep sending me special offers on luncheon meat. I wish they'd stop spamming me."},
+                    {subject: "puns", pun: "The jokes in this site are punishment enough without it getting all meta like this."}];
 
         for (var i = 0; i < puns.length; i++) {
             if (puns[i].subject == subject) {

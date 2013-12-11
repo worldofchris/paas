@@ -30,8 +30,9 @@
             var template = (data.toString());
 
             var mustache = require('mustache');
-            var view = {pun: pun};
+            var view = {pun: pun.line, attrib:pun.attrib};
             html = mustache.to_html(template, view);
+
             return html;
         }
     };

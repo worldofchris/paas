@@ -7,7 +7,7 @@ describe("punster", function() {
     var subject = "eggs";
     var expected_pun = "That's eggcellent";
 
-    pun = punster.pun(subject);
+    pun = punster.pun(subject).line;
     expect(pun).toEqual(expected_pun);
 
   });
@@ -18,7 +18,7 @@ describe("punster", function() {
                {subject: "eggs", pun: "That's eggcellent"}];
 
     for (var i = 0; i < puns.length; i++) {
-      expect(punster.pun(puns[i].subject)).toEqual(puns[i].pun);
+      expect(punster.pun(puns[i].subject).line).toEqual(puns[i].pun);
     }
 
   });
@@ -34,6 +34,13 @@ describe("punster", function() {
 
     var subject = "arse";
     expect( function(){ punster.pun(subject); }).toThrow(new Error("dirty boy"));
+
+  });
+
+  it("should give credit where credit's due", function() {
+
+    var subject = "gladiator";
+    expect(punster.pun(subject).attrib).toEqual("John Bryan");
 
   });
 

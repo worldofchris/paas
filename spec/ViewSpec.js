@@ -20,7 +20,7 @@ describe("view", function () {
 
   it("should present the pun in a nice format", function() {
 
-    var pun = "That's eggcellent";
+    var pun = {line: "That's eggcellent"};
     // substack
 
     // expect a form to appear pre populated with the subject of the pun I asked for
@@ -28,7 +28,22 @@ describe("view", function () {
 
     var $ = this.cheerio.load(pun_view);
 
-    expect($("#pun").text()).toEqual(pun);
+    expect($("#pun").text()).toEqual(pun.line);
+
+  });
+
+  it("should give credit where credit's due in a nice format", function() {
+
+    var pun = {line: "That's eggcellent", attrib: "John Bryan"};
+    // substack
+
+    // expect a form to appear pre populated with the subject of the pun I asked for
+    var pun_view = view.pun(pun);
+
+    var $ = this.cheerio.load(pun_view);
+
+    expect($("#pun").text()).toEqual(pun.line);
+    expect($("#attrib").text()).toEqual(pun.attrib);
 
   });
 

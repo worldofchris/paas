@@ -44,4 +44,13 @@ describe("punster", function() {
 
   });
 
+  it("should be able to deal with multi word subjects", function() {
+
+    var subject = ["functional", "programming"];
+    var line = "I don't like any loose ends in my functional programming.  I'm always looking for Clojure.";
+
+    expect(punster.pun(subject).line).toEqual(line);
+
+  });
+
 });

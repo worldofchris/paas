@@ -53,4 +53,28 @@ describe("punster", function() {
 
   });
 
+  it("should be able to tell if more than one subject has been given", function() {
+
+    var request = "pork+chop+sandwiches";
+    var subject = ['pork', 'chop', 'sandwiches'];
+
+    expect(punster.subject(request)).toEqual(subject);
+
+  });
+
+  it("should be able to tell that a request for a subject is well formed", function() {
+
+    var request = "eggs";
+    var subject = "eggs";
+
+    expect(punster.subject(request)).toEqual(subject);
+
+  });
+
+  it("should be barf at malformed subjects", function() {
+
+    var request = "pork%20chop%20sandwiches";
+    expect( function(){ punster.subject(request); }).toThrow(new Error("wtf"));
+  });
+
 });

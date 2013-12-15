@@ -7,7 +7,7 @@ var view = require('./src/view.js');
 // Configure our HTTP server to respond with Hello World to all requests.
 var server = http.createServer(function (request, response) {
   
-  var subject = request.url.split("/")[1];
+  var subject_requested = request.url.split("/")[1];
   var format;
   var view_foo;
 
@@ -16,6 +16,7 @@ var server = http.createServer(function (request, response) {
   }
 
   try {
+    var subject = punster.subject(subject_requested);
     pun = punster.pun(subject);
     view_foo = (view.pun(pun, subject, format));
     console.log(pun);
@@ -26,6 +27,9 @@ var server = http.createServer(function (request, response) {
         break;
       case 'dirty boy':
         view_foo = (view.dirty_boy(subject, format));
+        break;
+      case 'wtf':
+        view_foo = (view.ewwow());
         break;
       }
     console.log(err);

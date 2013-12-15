@@ -92,4 +92,12 @@ describe("view", function () {
 
   });
 
+  it("should tell me it has no idea what I'm on about", function() {
+
+    var request = "porkchop%20sandwiches"
+    var wtf_view = view.ewwow(request);
+    // what do we want to test for?
+
+  });
+
 });

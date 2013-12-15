@@ -1,5 +1,15 @@
 (function(exports){
 
+    exports.ewwow = function() {
+        var fs = require('fs');
+        var template_file = __dirname + '/../templates/ewwow.html';
+
+        data = fs.readFileSync(template_file);
+        var html = (data.toString());
+
+        return html;
+    };
+
     exports.signup = function(subject, format) {
 
         if (format == 'json') {

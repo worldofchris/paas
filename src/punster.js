@@ -1,5 +1,26 @@
 (function(exports){
 
+    exports.subject = function(request) {
+        
+        // Is request a multi part subject?
+        // Split on '+'
+
+        // Raise wtf if that doesn't do it for us.
+
+        if (request.indexOf("%20") != -1) {
+            throw "wtf";
+        }
+
+        var result = request.split("+");
+
+        if (result.length == 1) {
+            return result[0];
+        }
+
+        return result;
+
+    };
+
     exports.pun = function(subject) {
 
         var smut = ["arse"];

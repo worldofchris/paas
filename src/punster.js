@@ -37,6 +37,7 @@
                     {subject: "puns", pun: {line: "The jokes in this site are punishment enough without it getting all meta like this."}},
                     {subject: "gladiator", pun: {line: "Gladiator: An unrepentant cannibal.", attrib: "John Bryan"}},
                     {subject: "fist", pun: {line: "I split my knuckle to the bone when I punched him in the face.  I made a real fist of it."}},
+                    {subject: "coffee", pun: {line: "Making coffee myself from the beans rather than buying instant is too much like hard work.  It's a real grind."}},
                     {subject: ["functional", "programming"], pun: {line: "I don't like any loose ends in my functional programming.  I'm always looking for Clojure."}}];
 
         for (var i = 0; i < puns.length; i++) {

@@ -1,0 +1,15 @@
+{
+  "name": "paas",
+  "version": "0.0.1",
+  "description": "Puns as as Service",
+  "author": "Chris Young <chris@chrisyoung.org>",
+  "scripts": {
+    "test": "jasmine-node spec",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "mustache": "^1.0.0",
+    "jasmine-node": "^1.14.5"
+  }
+}
